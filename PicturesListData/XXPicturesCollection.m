@@ -96,10 +96,10 @@
 
 
 @interface XXPicturesCollection()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-{
-    CGFloat width;
-}
-@property (nonatomic, strong)UICollectionView *collectionView;
+
+@property (nonatomic, assign) CGFloat width;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *picturesArray;
 
@@ -153,11 +153,11 @@
 {
     [super layoutSubviews];
     
-    width =  self.frame.size.width;
+    _width =  self.frame.size.width;
     if (!self.collectionView) {
         [self initUI];
     }else {
-        self.collectionView.frame = CGRectMake(0, 0, width, self.frame.size.height);
+        self.collectionView.frame = CGRectMake(0, 0, _width, self.frame.size.height);
     }
     
 }
@@ -171,7 +171,7 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, width, self.frame.size.height) collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, _width, self.frame.size.height) collectionViewLayout:layout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -249,8 +249,8 @@
 #pragma mark  定义每个UICollectionView的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width2 = (width - ((_configuration.maxRow-1) * _configuration.horizontalSpacing + _configuration.rightMargin + _configuration.leftMargin))/_configuration.maxRow;
-    return  CGSizeMake(width2, width2);
+    CGFloat widthCollection = (_width - ((_configuration.maxRow-1) * _configuration.horizontalSpacing + _configuration.rightMargin + _configuration.leftMargin))/_configuration.maxRow;
+    return  CGSizeMake(widthCollection, widthCollection);
 }
 
 
