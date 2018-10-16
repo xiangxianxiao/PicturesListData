@@ -1,0 +1,6 @@
+framework module EZImageBrowserKit {
+  umbrella header "EZImageBrowserKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

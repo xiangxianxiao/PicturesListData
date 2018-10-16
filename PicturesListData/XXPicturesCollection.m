@@ -212,7 +212,7 @@
     
     [cell.deleteImage setBackgroundImage:self.configuration.deleteImageName forState:UIControlStateNormal];
     [cell.deleteImage addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-    cell.deleteImage.tag = 100 + indexPath.row;
+    cell.deleteImage.tag = 10000 + indexPath.row;
     
     if (self.picturesArray.count-1 != self.configuration.maxValue) {
         
@@ -239,7 +239,7 @@
 
 - (void)deleteAction:(UIButton *)btn{
     
-    NSInteger btnTag = btn.tag - 100;
+    NSInteger btnTag = btn.tag - 10000;
     if (self.picturesArray.count > 1) {
         [self.picturesArray removeObjectAtIndex:btnTag];
         [self.collectionView reloadData];
@@ -277,15 +277,13 @@
 #pragma mark  点击CollectionView触发事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.picturesArray.count-1 < self.configuration.maxValue) {
-        if (self.indexTag == indexPath.row) {// 相册选择图片
-            
-            if (self.configuration.selectBlock) {
-                self.configuration.selectBlock(self.picturesArray, 0);
-            }
+
+    if (self.indexTag == indexPath.row) {// 相册选择图片
+        
+        if (self.configuration.selectBlock) {
+            self.configuration.selectBlock(self.picturesArray, -1);
         }
     }else{ // 放大第几个图片
-//        NSLog(@"===放大第几个图片==%ld",(long)indexPath.row);
         if (self.configuration.selectBlock) {
             self.configuration.selectBlock(self.picturesArray, indexPath.row);
         }

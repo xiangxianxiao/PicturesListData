@@ -8,13 +8,14 @@
 
 #import "ViewController.h"
 #import "XXPicturesCollection.h"
+#import "XXImageBrowseViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     XXPicturesCollection *pictures;
 }
 
-@property (nonatomic, strong) NSMutableArray *arrayData;
+@property (nonatomic, strong) NSMutableArray *addPicturesData;
 
 @property (weak, nonatomic) IBOutlet XXPicturesCollection *addPicturesView;
 
@@ -25,7 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.arrayData = [[NSMutableArray alloc] initWithCapacity:0];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    self.addPicturesData = [[NSMutableArray alloc] initWithCapacity:0];
 
 //    pictures = [[XXPicturesCollection alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 500)];
 //    pictures.configuration.maxRow = 4;
@@ -38,11 +41,16 @@
 //
 //    __weak typeof(self)weakSelf = self;
 //    pictures.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
-//        if (status == 0) { //添加图片
-//            weakSelf.arrayData = arrayPictures;
+//        if (status == -1) {
+//            //添加图片
+//            weakSelf.addPicturesData = arrayPictures;
 //            [weakSelf photoLibraychoosephoto];
-//        }else{ //点击放大第几个图片
-//
+//        }else{
+//            //点击放大第几个图片
+//            XXImageBrowseViewController *imageBro = [[XXImageBrowseViewController alloc] init];
+//            imageBro.imageUrlStringArray =  arrayPictures;
+//            imageBro.currentIndex = status;
+//            [weakSelf.navigationController pushViewController:imageBro animated:NO];
 //        }
 //    };
 
@@ -54,11 +62,15 @@
     self.addPicturesView.configuration.maxValue = 5;
     __weak typeof(self)weakSelf = self;
     self.addPicturesView.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
-        if (status == 0) { //添加图片
-            weakSelf.arrayData = arrayPictures;
+        if (status == -1) { //添加图片
+            weakSelf.addPicturesData = arrayPictures;
             [weakSelf photoLibraychoosephoto];
         }else{ //点击放大第几个图片
-
+            //点击放大第几个图片
+            XXImageBrowseViewController *imageBro = [[XXImageBrowseViewController alloc] init];
+            imageBro.imageUrlStringArray =  arrayPictures;
+            imageBro.currentIndex = status;
+            [weakSelf.navigationController pushViewController:imageBro animated:NO];
         }
     };
     
@@ -81,10 +93,10 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage]; //通过key值获取到图片
     
-    [self.arrayData insertObject:image atIndex:0];
-//    pictures.imageArray = self.arrayData;
-    self.addPicturesView.imageArray = self.arrayData;
+    [self.addPicturesData insertObject:image atIndex:0];
+    self.addPicturesView.imageArray = self.addPicturesData;
     
+//    pictures.imageArray = self.addPicturesData;
 }
 
 //当用户取消选择的时候，调用该方法

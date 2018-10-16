@@ -1,0 +1,22 @@
+PODS:
+  - EZImageBrowserKit (0.0.2)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+
+DEPENDENCIES:
+  - EZImageBrowserKit
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EZImageBrowserKit
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  EZImageBrowserKit: 8d6b49ce4834696619203f19690de76bdbade011
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+
+PODFILE CHECKSUM: e970d570382555edc73dfbb69c5234884eae28c4
+
+COCOAPODS: 1.6.0.beta.1

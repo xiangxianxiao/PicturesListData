@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
-
 
 /**
  选择进行处理操作
