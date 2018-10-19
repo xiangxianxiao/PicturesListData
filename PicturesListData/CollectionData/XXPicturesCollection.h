@@ -68,12 +68,6 @@ typedef void(^SelectPicturesBlock)(NSMutableArray *arrayPictures,NSInteger statu
  */
 @property (nonatomic, strong) UIImage *deleteImageName;
 
-
-/**
- 是否允许长按移动位置
- */
-@property (nonatomic, assign) BOOL isLongPress;
-
 @end
 
 

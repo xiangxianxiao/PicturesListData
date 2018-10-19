@@ -87,10 +87,6 @@
     self.picturesCollection.configuration = self;
 }
 
-- (void)setIsLongPress:(BOOL)isLongPress{
-    _isLongPress = isLongPress;
-}
-
 @end
 
 

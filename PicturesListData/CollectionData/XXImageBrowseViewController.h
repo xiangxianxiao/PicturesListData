@@ -10,6 +10,9 @@
 
 
 
+/**
+ 点击查看图片
+ */
 @interface XXImageBrowseViewController : UIViewController
 
 @property (strong, nonatomic) NSArray *imageUrlStringArray;

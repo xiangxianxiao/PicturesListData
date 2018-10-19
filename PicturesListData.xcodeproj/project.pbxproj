@@ -15,9 +15,9 @@
 		043338E2216DFE0300E7D9C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 043338E1216DFE0300E7D9C2 /* main.m */; };
 		043338EC216DFE0300E7D9C2 /* PicturesListDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043338EB216DFE0300E7D9C2 /* PicturesListDataTests.m */; };
 		043338F7216DFE0300E7D9C2 /* PicturesListDataUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 043338F6216DFE0300E7D9C2 /* PicturesListDataUITests.m */; };
-		048410362175B73500A6607D /* XXPicturesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 048410332175B73500A6607D /* XXPicturesCollection.m */; };
-		048410372175B73500A6607D /* XXPicturesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048410342175B73500A6607D /* XXPicturesCollectionViewCell.m */; };
-		048410382175B73500A6607D /* XXImageBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048410352175B73500A6607D /* XXImageBrowseViewController.m */; };
+		049F696D217975DC00FCD420 /* XXImageBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F6967217975DC00FCD420 /* XXImageBrowseViewController.m */; };
+		049F696E217975DC00FCD420 /* XXPicturesCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F6968217975DC00FCD420 /* XXPicturesCollection.m */; };
+		049F696F217975DC00FCD420 /* XXPicturesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F696C217975DC00FCD420 /* XXPicturesCollectionViewCell.m */; };
 		E12A6668AD980506997E1E03 /* Pods_PicturesListData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EF82B03FA084E86E10DD80 /* Pods_PicturesListData.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +55,12 @@
 		043338F2216DFE0300E7D9C2 /* PicturesListDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicturesListDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043338F6216DFE0300E7D9C2 /* PicturesListDataUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicturesListDataUITests.m; sourceTree = "<group>"; };
 		043338F8216DFE0400E7D9C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		048410302175B73500A6607D /* XXPicturesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPicturesCollection.h; sourceTree = "<group>"; };
-		048410312175B73500A6607D /* XXImageBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXImageBrowseViewController.h; sourceTree = "<group>"; };
-		048410322175B73500A6607D /* XXPicturesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPicturesCollectionViewCell.h; sourceTree = "<group>"; };
-		048410332175B73500A6607D /* XXPicturesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPicturesCollection.m; sourceTree = "<group>"; };
-		048410342175B73500A6607D /* XXPicturesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPicturesCollectionViewCell.m; sourceTree = "<group>"; };
-		048410352175B73500A6607D /* XXImageBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXImageBrowseViewController.m; sourceTree = "<group>"; };
+		049F6967217975DC00FCD420 /* XXImageBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXImageBrowseViewController.m; sourceTree = "<group>"; };
+		049F6968217975DC00FCD420 /* XXPicturesCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPicturesCollection.m; sourceTree = "<group>"; };
+		049F6969217975DC00FCD420 /* XXImageBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXImageBrowseViewController.h; sourceTree = "<group>"; };
+		049F696A217975DC00FCD420 /* XXPicturesCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPicturesCollection.h; sourceTree = "<group>"; };
+		049F696B217975DC00FCD420 /* XXPicturesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPicturesCollectionViewCell.h; sourceTree = "<group>"; };
+		049F696C217975DC00FCD420 /* XXPicturesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPicturesCollectionViewCell.m; sourceTree = "<group>"; };
 		0A223F2000B996B66FE92D4D /* Pods-PicturesListData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicturesListData.release.xcconfig"; path = "Target Support Files/Pods-PicturesListData/Pods-PicturesListData.release.xcconfig"; sourceTree = "<group>"; };
 		31EF82B03FA084E86E10DD80 /* Pods_PicturesListData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicturesListData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4495C2DE36538BB37199D3A /* Pods-PicturesListData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicturesListData.debug.xcconfig"; path = "Target Support Files/Pods-PicturesListData/Pods-PicturesListData.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,12 +152,12 @@
 		0484102F2175B73500A6607D /* CollectionData */ = {
 			isa = PBXGroup;
 			children = (
-				048410302175B73500A6607D /* XXPicturesCollection.h */,
-				048410312175B73500A6607D /* XXImageBrowseViewController.h */,
-				048410322175B73500A6607D /* XXPicturesCollectionViewCell.h */,
-				048410332175B73500A6607D /* XXPicturesCollection.m */,
-				048410342175B73500A6607D /* XXPicturesCollectionViewCell.m */,
-				048410352175B73500A6607D /* XXImageBrowseViewController.m */,
+				049F6969217975DC00FCD420 /* XXImageBrowseViewController.h */,
+				049F6967217975DC00FCD420 /* XXImageBrowseViewController.m */,
+				049F696A217975DC00FCD420 /* XXPicturesCollection.h */,
+				049F6968217975DC00FCD420 /* XXPicturesCollection.m */,
+				049F696B217975DC00FCD420 /* XXPicturesCollectionViewCell.h */,
+				049F696C217975DC00FCD420 /* XXPicturesCollectionViewCell.m */,
 			);
 			path = CollectionData;
 			sourceTree = "<group>";
@@ -360,11 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048410362175B73500A6607D /* XXPicturesCollection.m in Sources */,
+				049F696D217975DC00FCD420 /* XXImageBrowseViewController.m in Sources */,
 				043338D7216DFE0200E7D9C2 /* ViewController.m in Sources */,
-				048410382175B73500A6607D /* XXImageBrowseViewController.m in Sources */,
+				049F696E217975DC00FCD420 /* XXPicturesCollection.m in Sources */,
+				049F696F217975DC00FCD420 /* XXPicturesCollectionViewCell.m in Sources */,
 				043338E2216DFE0300E7D9C2 /* main.m in Sources */,
-				048410372175B73500A6607D /* XXPicturesCollectionViewCell.m in Sources */,
 				043338D4216DFE0200E7D9C2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
