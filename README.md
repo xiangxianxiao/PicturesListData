@@ -60,3 +60,5 @@ typedef void(^SelectPicturesBlock)(NSMutableArray *arrayPictures,NSInteger statu
  删除事件的图片
  */
 @property (nonatomic, strong) UIImage *deleteImageName;
+
+PicturesListData/Simulator Screen Shot - iPhone 8 Plus - 2018-10-19 at 10.25.54.png
