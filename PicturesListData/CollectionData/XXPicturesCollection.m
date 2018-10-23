@@ -8,7 +8,7 @@
 
 #import "XXPicturesCollection.h"
 #import "XXPicturesCollectionViewCell.h"
-
+#import "UIImageView+WebCache.h"
 @implementation XXPicturesCollectionConfiguration
 
 - (instancetype)init {
@@ -209,6 +209,16 @@
     [cell.deleteImage setBackgroundImage:self.configuration.deleteImageName forState:UIControlStateNormal];
     [cell.deleteImage addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
     cell.deleteImage.tag = 10000 + indexPath.row;
+    
+    if (self.configuration.isOnlyShowImage) {
+        if (self.configuration.isImageUrl) {
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:self.picturesArray[indexPath.row]]];
+        }else{
+            [cell.imageView setImage:self.picturesArray[indexPath.row]];
+        }
+        return cell;
+    }
+
     
     if (self.picturesArray.count-1 != self.configuration.maxValue) {
         

@@ -68,6 +68,17 @@ typedef void(^SelectPicturesBlock)(NSMutableArray *arrayPictures,NSInteger statu
  */
 @property (nonatomic, strong) UIImage *deleteImageName;
 
+/**
+ 是否网络图片 在isOnlyShowImage==Yes时生效
+ */
+@property (nonatomic, assign) BOOL isImageUrl;
+
+/**
+ 是否只显示图片
+ */
+@property (nonatomic, assign) BOOL isOnlyShowImage;
+
+
 @end
 
 
