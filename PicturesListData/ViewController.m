@@ -11,9 +11,9 @@
 #import "XXImageBrowseViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-{
-    XXPicturesCollection *pictures;
-}
+//{
+//    XXPicturesCollection *pictures;
+//}
 
 @property (nonatomic, strong) NSMutableArray *addPicturesData;
 
@@ -30,42 +30,22 @@
     
     self.addPicturesData = [[NSMutableArray alloc] initWithCapacity:0];
 
-    pictures = [[XXPicturesCollection alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 500)];
-    pictures.configuration.maxRow = 4;
-    pictures.configuration.maxValue = 6;
-
-    pictures.configuration.addImageName = [UIImage imageNamed:@"community_photo"];
-    pictures.configuration.deleteImageName = [UIImage imageNamed:@"community_close"];
-
-    [self.view addSubview:pictures];
-
-    __weak typeof(self)weakSelf = self;
-    pictures.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
-        if (status == -1) {
-            //添加图片
-            weakSelf.addPicturesData = arrayPictures;
-            [weakSelf photoLibraychoosephoto];
-        }else{
-            //点击放大第几个图片
-            XXImageBrowseViewController *imageBro = [[XXImageBrowseViewController alloc] init];
-            imageBro.imageUrlStringArray =  arrayPictures;
-            imageBro.currentIndex = status;
-            [weakSelf.navigationController pushViewController:imageBro animated:NO];
-        }
-    };
-
-    
-//    self.addPicturesView.configuration.addImageName = [UIImage imageNamed:@"community_photo"];
-//    self.addPicturesView.configuration.deleteImageName = [UIImage imageNamed:@"community_close"];
+//    pictures = [[XXPicturesCollection alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 500)];
+//    pictures.configuration.maxRow = 4;
+//    pictures.configuration.maxValue = 6;
 //
-//    self.addPicturesView.configuration.maxRow = 4;
-//    self.addPicturesView.configuration.maxValue = 5;
+//    pictures.configuration.addImageName = [UIImage imageNamed:@"community_photo"];
+//    pictures.configuration.deleteImageName = [UIImage imageNamed:@"community_close"];
+//
+//    [self.view addSubview:pictures];
+//
 //    __weak typeof(self)weakSelf = self;
-//    self.addPicturesView.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
-//        if (status == -1) { //添加图片
+//    pictures.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
+//        if (status == -1) {
+//            //添加图片
 //            weakSelf.addPicturesData = arrayPictures;
 //            [weakSelf photoLibraychoosephoto];
-//        }else{ //点击放大第几个图片
+//        }else{
 //            //点击放大第几个图片
 //            XXImageBrowseViewController *imageBro = [[XXImageBrowseViewController alloc] init];
 //            imageBro.imageUrlStringArray =  arrayPictures;
@@ -73,6 +53,26 @@
 //            [weakSelf.navigationController pushViewController:imageBro animated:NO];
 //        }
 //    };
+
+    
+    self.addPicturesView.configuration.addImageName = [UIImage imageNamed:@"community_photo"];
+    self.addPicturesView.configuration.deleteImageName = [UIImage imageNamed:@"community_close"];
+
+    self.addPicturesView.configuration.maxRow = 4;
+    self.addPicturesView.configuration.maxValue = 5;
+    __weak typeof(self)weakSelf = self;
+    self.addPicturesView.configuration.selectBlock = ^(NSMutableArray *arrayPictures, NSInteger status) {
+        if (status == -1) { //添加图片
+            weakSelf.addPicturesData = arrayPictures;
+            [weakSelf photoLibraychoosephoto];
+        }else{ //点击放大第几个图片
+            //点击放大第几个图片
+            XXImageBrowseViewController *imageBro = [[XXImageBrowseViewController alloc] init];
+            imageBro.imageUrlStringArray =  arrayPictures;
+            imageBro.currentIndex = status;
+            [weakSelf.navigationController pushViewController:imageBro animated:NO];
+        }
+    };
     
 }
 
@@ -94,8 +94,8 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage]; //通过key值获取到图片
     
     [self.addPicturesData insertObject:image atIndex:0];
-//    self.addPicturesView.imageArray = self.addPicturesData;
-    pictures.imageArray = self.addPicturesData;
+    self.addPicturesView.imageArray = self.addPicturesData;
+//    pictures.imageArray = self.addPicturesData;
 }
 
 //当用户取消选择的时候，调用该方法
